@@ -1,0 +1,11 @@
+[project]
+name = "fktz"
+version = "0.1.0"
+description = "A discord bot for Discord Timestamps – because f*ck timezones."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "discord-py>=2.5.2",
+    "dotenv>=0.9.9",
+    "python-dateutil>=2.9.0.post0",
+]
