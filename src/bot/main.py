@@ -29,6 +29,19 @@ async def on_message(message):
     
     # Process commands normally
     await bot.process_commands(message)
+    
+@bot.command(name='help')
+async def help_cmd(ctx):
+    with open('src/resources/tz.png', 'rb') as f:
+        picture = discord.File(f)
+        await ctx.send(file=picture)
+        
+@bot.command(name='github')
+async def help_cmd(ctx):
+    response = (
+        'https://github.com/'
+    )
+    await ctx.send(response)
 
 @bot.command(name='ts')
 async def timestamp_cmd(ctx, *, time_str: str):
@@ -41,6 +54,13 @@ async def timestamp_cmd(ctx, *, time_str: str):
     """
     try:
         logger.info("Processing message.")
+        
+        if time_str[10] == " ":
+            time_str = time_str[:10] + "T" + time_str[11:]
+        time_str = time_str.replace(".", ":")
+        time_str = time_str.replace(" ", "")
+        time_str = time_str.strip()
+        
         # Parse ISO8601 timestamp
         dt = isoparse(time_str)
         
@@ -62,26 +82,25 @@ async def timestamp_cmd(ctx, *, time_str: str):
             f"**Long Date/Time Format**: {long_format}\n"
             f"**Relative Format**: {relative_format}\n"
             f"**Raw Format**: {raw_format}\n\n"
-            f"**Tip for Raw Format:**\n"
-            f"- `F` = Long Date/Time\n"
-            f"- `R` = Relative Time\n"
-            f"- `d` = Short Date\n"
-            f"- `t` = Short Time\n"
-            f"- `T` = Long Time"
+            # f"**Tip for Raw Format:**\n"
+            # f"- `F` = Long Date/Time\n"
+            # f"- `R` = Relative Time\n"
+            # f"- `d` = Short Date\n"
+            # f"- `t` = Short Time\n"
+            # f"- `T` = Long Time"
         )
         
         await ctx.send(response)
         
     except Exception as e:
         error_msg = (
-            "❌ Invalid timestamp format. Please use ISO8601 format.\n\n"
+            f"❌ Invalid timestamp format: `{str(e)}`. Please use ISO8601 format.\n\n"
             "**Examples**:\n"
             "```\n"
             "!ts 2025-07-01T14:35:00Z\n"
             "!ts 1993-01-01T23:59:59+07:00\n"
             "!ts 2030-12-31T08:30:00-05:00\n"
-            "```\n"
-            f"_Technical details: {str(e)}_"
+            "```"
         )
         await ctx.send(error_msg)
 
