@@ -1,4 +1,9 @@
-![](/docs/logo.png)
+<div align="center">
+	<br />
+		<img src="/docs/logo.png" width="450" alt="fktz logo" />
+	<br />
+</div>
+
 # <p align="center"> fktz </p>
 
 A simple solution to working with [Discord Timestamps](https://gist.github.com/LeviSnoot/d9147767abeef2f770e9ddcd91eb85aa). Because f*ck timezones.
