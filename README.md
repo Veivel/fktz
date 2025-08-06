@@ -1,5 +1,5 @@
-#### <span align="center"> <p style="font-size:64px">fktz</p> <p>f*ck timezones</p> </span>
-#
+![](/docs/logo.png)
+# <p align="center"> fktz </p>
 
 A simple solution to working with [Discord Timestamps](https://gist.github.com/LeviSnoot/d9147767abeef2f770e9ddcd91eb85aa). Because f*ck timezones.
 
