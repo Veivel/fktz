@@ -28,4 +28,4 @@ ENV PATH="/app/.venv/bin:$PATH"
 # Reset the entrypoint, don't invoke `uv`
 ENTRYPOINT []
 
-CMD ["python", "src/bot/main.py"]
+CMD ["python", "src/fktz/bot/__init__.py"]
