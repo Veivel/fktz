@@ -1,4 +1,5 @@
-# fktz
+#### <span align="center"> <p style="font-size:64px">fktz</p> <p>f*ck timezones</p> </span>
+#
 
 A simple solution to working with [Discord Timestamps](https://gist.github.com/LeviSnoot/d9147767abeef2f770e9ddcd91eb85aa). Because f*ck timezones.
 
@@ -8,14 +9,17 @@ So I built fktz; you only need to supply a ISO-8601 timestamp and the bot will d
 
 ## Invite Link
 
-https://discord.com/oauth2/authorize?client_id=1401163863960850473&permissions=3072&scope=bot
+You can invite the bot to your Discord Server [here](https://discord.com/oauth2/authorize?client_id=1401163863960850473&permissions=3072&scope=bot).
 
 ## Usage
 
-Example command: `!ts 2025-12-30T23:59:59+04:00`
-![example timezone](/docs/tz.png)
+Command format: `!ts <ISO8601>`, example: `!ts 2025-12-30T23:59:59+04:00`. 
 
-Timezone is relative to UTC, for example: `+04:30`, `-07:00`, `+00:00`
+Timezone is offset relative to UTC, for example: `+04:00`, `-07:30`, `+00:00`. See [this wikipedia page](https://en.wikipedia.org/wiki/List_of_UTC_offsets) to find what your UTC offset is.
+
+The visual below breaks down an ISO8601 timestamp.
+
+![example timezone](/docs/tz.png)
 
 ## Build from Source
 
